@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  postgres-server:
+    image: diegmonti/test_db
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+    networks:
+      - postgres-network
+  postgres-client:
+    image: postgres
+    environment:
+      - PGPASSWORD=mysecretpassword
+    stdin_open: true
+    tty: true
+    command: "psql -h postgres-server -U postgres"
+    networks:
+      - postgres-network
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - postgres-network
+
+networks:
+  postgres-network:
+    name: postgres-network
+    driver: bridge
