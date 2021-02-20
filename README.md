@@ -1,6 +1,8 @@
 # test_db
 A sample database on PostgreSQL running in Docker.
 
+[![Try in PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/diegmonti/test_db/master/docker-compose.yml)
+
 ## Where it comes from
 
 This PostgreSQL dump was created starting from the MySQL dump 
